@@ -31,8 +31,31 @@
 | head -n 12 SRR1039508_sub_1.fastq                      | Check the first 12 lines of the file                                                            |
 | head -n 10 SRR1039508_1.fastq > SRR1039508_sub_1.fastq | Write the first 10 lines to a new file                                                          |
 
+## Extract & install tar.gz files
+- Download the desired .tar.gz or (.tar.bz2) file
+- Open Terminal
+- Extract the .tar.gz or (.tar.bz2) file with the following commands:
+	```bash
+	tar xvzf PACKAGENAME.tar.gz
+	tar xvjf PACKAGENAME.tar.bz2
+	```
+- Nevigate to the extracted folder using `cd` command
+	```bash
+	cd PACKAGENAME
+	```
+- Now run the following command to install the tarball
+	```bash
+	./configure
+	make
+	sudo make install
+	```
 
-
+### Example with hg19 index
+```bash
+cd data/hg19_idx/genome
+wget https://genome idx.s3.amazonaws.com/hisat/hg19_genome.tar.gz
+tar xvzf hg19_genome.tar.gz
+```
 
 
 
